@@ -1,7 +1,4 @@
 <?php
-/**
- * Menu page for link review.
- */
 
 /**
  * Use the hook "admin_menu" to add a menu page 

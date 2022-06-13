@@ -7,36 +7,36 @@
  * This file is responsible for starting the plugin using the main plugin class file.
  *
  * @since 0.0.1
- * @package Plugin_Name
+ * @package citations_url_review
  *
  * @wordpress-plugin
- * Plugin Name:     OPP - Citaciones & Revisión de Enlaces
+ * Plugin Name:		Citaciones & Revisión de Enlaces
  * Description:		El mejor plugin para agregar citaciones a tus posts con un campo WYSIWYG (HTML) y un shortcode. Además te ayuda a revisar si tienes enlaces rotos dentro de tus posts.
- * Version:         1.0
- * Author:          Oscar Estrella
- * Author URI:      https://www.linkedin.com/in/oscarestrella
- * License:         GPL-2.0+
- * License URI:     http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:     citaciones-y-revision-de-enlaces
- * Domain Path:     /lang
+ * Version:			1.0
+ * Author:			Oscar Estrella
+ * Author URI:		https://www.linkedin.com/in/oscarestrella
+ * License:			GPL-2.0+
+ * License URI:		http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:		citaciones-y-revision-de-enlaces
+ * Domain Path:		/lang
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access not permitted.' );
 }
 
-if ( ! class_exists( 'plugin_name' ) ) {
+if ( ! class_exists( 'citations_url_review' ) ) {
 
 	/*
-	 * main plugin_name class
+	 * main citations_url_review class
 	 *
-	 * @class plugin_name
+	 * @class citations_url_review
 	 * @since 0.0.1
 	 */
-	class plugin_name {
+	class citations_url_review {
 
 		/*
-		 * plugin_name plugin version
+		 * citations_url_review plugin version
 		 *
 		 * @var string
 		 */
@@ -45,17 +45,17 @@ if ( ! class_exists( 'plugin_name' ) ) {
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var plugin_name
+		 * @var citations_url_review
 		 * @since 0.0.1
 		 */
 		protected static $instance = null;
 
 		/**
-		 * Main plugin_name instance.
+		 * Main citations_url_review instance.
 		 *
 		 * @since 0.0.1
 		 * @static
-		 * @return plugin_name - main instance.
+		 * @return citations_url_review - main instance.
 		 */
 		public static function instance() {
 			if ( is_null( self::$instance ) ) {
@@ -65,7 +65,7 @@ if ( ! class_exists( 'plugin_name' ) ) {
 		}
 
 		/**
-		 * plugin_name class constructor.
+		 * citations_url_review class constructor.
 		 */
 		public function __construct() {
 			$this->load_plugin_textdomain();
@@ -104,17 +104,17 @@ if ( ! class_exists( 'plugin_name' ) ) {
 
 
 		/**
-		 * Define plugin_name constants
+		 * Define citations_url_review constants
 		 */
 		private function define_constants() {
-			define( 'PLUGIN_NAME_PLUGIN_FILE', __FILE__ );
-			define( 'PLUGIN_NAME_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-			define( 'PLUGIN_NAME_VERSION', $this->version );
-			define( 'PLUGIN_NAME_PATH', $this->plugin_path() );
+			define( 'citations_url_review_PLUGIN_FILE', __FILE__ );
+			define( 'citations_url_review_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+			define( 'citations_url_review_VERSION', $this->version );
+			define( 'citations_url_review_PATH', $this->plugin_path() );
 		}
 
 		/**
-		 * Define plugin_name actions
+		 * Define citations_url_review actions
 		 */
 		public function define_actions() {
 			register_activation_hook( __FILE__, 'ctl_table_creation' );
@@ -123,12 +123,12 @@ if ( ! class_exists( 'plugin_name' ) ) {
 		}
 
 		/**
-		 * Define plugin_name menus
+		 * Define citations_url_review menus
 		 */
 		public function define_menus() {
-            require_once plugin_dir_path( __FILE__ ) . "/includes/menupage-url-review.php";
+			require_once plugin_dir_path( __FILE__ ) . "/includes/menupage-url-review.php";
 		}
 	}
 
-	$plugin_name = new plugin_name();
+	$citations_url_review = new citations_url_review();
 }
